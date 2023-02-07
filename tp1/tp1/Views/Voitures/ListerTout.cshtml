@@ -1,0 +1,51 @@
+﻿@model  IEnumerable<tp1.Models.Voiture>
+
+@{
+    ViewBag.Title = "ListerTout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<body>
+  
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">
+                     @Html.DisplayNameFor(model => model.NoSerie)
+                </th>
+                <th scope="col">
+                     @Html.DisplayNameFor(model => model.Sorte)
+                </th>
+                <th scope="col">
+                     @Html.DisplayNameFor(model => model.Annee)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Prix)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (tp1.Models.Voiture item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.NoSerie
+                    </td>
+                    <td>
+                        @item.Sorte
+                    </td>
+                    <td>
+                        @item.Annee
+                    </td>
+                    <td>
+                        @item.Prix
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+
